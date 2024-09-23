@@ -46,9 +46,26 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Camera App</h1>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        gap: "16px",
+      }}
+    >
       <div>
+        <h1>Camera App</h1>
+        <p>By Aissa Bedr</p>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          gap: "16px",
+        }}
+      >
         <button onClick={() => startCamera("user")}>Start Selfie Camera</button>
         <button onClick={() => startCamera("environment")}>
           Start Back Camera
@@ -56,8 +73,18 @@ function App() {
       </div>
       <div>
         <video ref={videoRef} style={{ display: "block", width: "100%" }} />
-        <button onClick={captureImage}>Capture Image</button>
-        <button onClick={saveImage}>Save Image</button>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "16px",
+            marginTop: "8px",
+          }}
+        >
+          <button onClick={captureImage}>Capture Image</button>
+          <button onClick={saveImage}>Save Image</button>
+        </div>
       </div>
       <p>streaming ? {`${streaming}`}</p>
       <canvas ref={canvasRef} style={{ display: "none" }} />
