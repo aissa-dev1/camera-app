@@ -48,22 +48,18 @@ function App() {
   return (
     <div>
       <h1>Camera App</h1>
-      {!streaming ? (
-        <div>
-          <button onClick={() => startCamera("user")}>
-            Start Selfie Camera
-          </button>
-          <button onClick={() => startCamera("environment")}>
-            Start Back Camera
-          </button>
-        </div>
-      ) : (
-        <div>
-          <video ref={videoRef} style={{ display: "block", width: "100%" }} />
-          <button onClick={captureImage}>Capture Image</button>
-          <button onClick={saveImage}>Save Image</button>
-        </div>
-      )}
+      <div>
+        <button onClick={() => startCamera("user")}>Start Selfie Camera</button>
+        <button onClick={() => startCamera("environment")}>
+          Start Back Camera
+        </button>
+      </div>
+      <div>
+        <video ref={videoRef} style={{ display: "block", width: "100%" }} />
+        <button onClick={captureImage}>Capture Image</button>
+        <button onClick={saveImage}>Save Image</button>
+      </div>
+      <p>streaming ? {`${streaming}`}</p>
       <canvas ref={canvasRef} style={{ display: "none" }} />
     </div>
   );
